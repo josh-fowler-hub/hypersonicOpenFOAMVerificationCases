@@ -1,0 +1,44 @@
+FoamFile
+{
+    version 2.0;
+    format ascii;
+    class dictionary;
+    object fvSchemes;
+}
+
+fluxScheme Kurganov; // Kurganov central-upwind flux formulation
+
+ddtSchemes // Temporal schemes
+{
+    default Euler;
+}
+
+gradSchemes // Gradient Evaluation
+{
+    default Gauss linear;
+}
+
+divSchemes // Divergence schemes
+{
+    default none; // Must use explicitly configured divergence schemes
+    div(tauMC) Gauss linear; // Scheme for the modeled/viscous stress-flux divergence.
+}
+
+laplacianSchemes // Diffusive second-order operators
+{
+    default Gauss linear corrected; // Gauss Laplacian with corrected face-normal gradients
+}
+
+interpolationSchemes // Interpolation and Reconstruction
+{
+    default linear; 
+
+    reconstruct(rho) Minmod; // Limited density reconstruction
+    reconstruct(U)   MinmodV; // Vector valued velocity recon
+    reconstruct(T)   Minmod; // Limited temperature recon
+}
+
+snGradSchemes // Face Normal Gradients
+{
+    default corrected; // Applies non-orthogonality correction
+}

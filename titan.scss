@@ -1,0 +1,215 @@
+/*-- scss:defaults --*/
+
+// TITAN palette
+$titan-black: #090a0b;
+$titan-carbon: #111315;
+$titan-graphite: #1c1f22;
+$titan-steel: #303438;
+
+$titan-orange: #e66b20;
+$titan-orange-hot: #ff7a22;
+$titan-copper: #a94d20;
+
+$titan-white: #f4f3f0;
+$titan-gray: #a3a3a0;
+
+// Bootstrap and Quarto theme settings
+$body-bg: $titan-black;
+$body-color: $titan-white;
+$link-color: $titan-orange-hot;
+$link-hover-color: $titan-white;
+
+$primary: $titan-orange;
+$secondary: $titan-steel;
+$border-color: $titan-steel;
+
+$font-family-sans-serif:
+  Inter, system-ui, -apple-system, BlinkMacSystemFont,
+  "Segoe UI", sans-serif;
+
+$font-family-monospace:
+  "JetBrains Mono", "Fira Code", monospace;
+
+$headings-font-weight: 700;
+
+$navbar-bg: $titan-carbon;
+$navbar-fg: $titan-white;
+$navbar-hl: $titan-orange-hot;
+
+$code-block-bg: $titan-carbon;
+$code-block-border-left: $titan-copper;
+$code-color: $titan-orange-hot;
+$code-bg: $titan-carbon;
+
+$input-bg: $titan-carbon;
+$input-color: $titan-white;
+$input-border-color: $titan-steel;
+$input-placeholder-color: $titan-gray;
+
+$table-color: $titan-white;
+$table-bg: $titan-black;
+$table-border-color: $titan-steel;
+$table-striped-bg: $titan-carbon;
+$table-hover-bg: $titan-graphite;
+
+$toc-color: $titan-orange-hot;
+
+/*-- scss:rules --*/
+
+:root {
+  --titan-field-gradient: linear-gradient(
+    90deg,
+    #ff7621 0%,
+    #b95220 18%,
+    #59301f 38%,
+    #292526 58%,
+    #181a1c 78%,
+    #0d0f10 100%
+  );
+}
+
+body {
+  line-height: 1.75;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  margin-top: 2.5rem;
+}
+
+a {
+  text-underline-offset: 0.25em;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid $titan-orange-hot;
+  outline-offset: 4px;
+}
+
+// Navigation
+.navbar {
+  border-bottom: 1px solid $titan-steel;
+  padding-block: 1rem;
+}
+
+.navbar-brand {
+  font-weight: 750;
+  letter-spacing: -0.035em;
+}
+
+// Gradient title banner on the homepage and notebook pages
+.quarto-title-banner {
+  background:
+    linear-gradient(
+      rgba(9, 10, 11, 0.58),
+      rgba(9, 10, 11, 0.58)
+    ),
+    var(--titan-field-gradient);
+  color: $titan-white;
+  padding-block: 4rem;
+  border-bottom: 1px solid $titan-steel;
+}
+
+.quarto-title-banner h1 {
+  color: $titan-white;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.12;
+}
+
+.quarto-title-banner .description {
+  color: $titan-white;
+  max-width: 760px;
+}
+
+// Notebook category labels
+.quarto-category {
+  color: $titan-white !important;
+  border-color: $titan-gray !important;
+  border-radius: 6px;
+}
+
+// Notebook index
+.quarto-listing {
+  margin-top: 2rem;
+}
+
+.quarto-listing-table {
+  border-color: $titan-steel;
+}
+
+.quarto-listing-table thead th {
+  background: $titan-graphite;
+  color: $titan-white;
+  padding-block: 1rem;
+}
+
+.quarto-listing-table td {
+  padding-block: 1rem;
+}
+
+.quarto-listing-table tbody tr:hover > * {
+  background-color: #24282c;
+}
+
+.quarto-listing-category {
+  color: $titan-gray;
+}
+
+.quarto-listing-category .category:hover,
+.quarto-listing-category .category.active {
+  color: $titan-orange-hot;
+}
+
+// Code cells
+div.sourceCode {
+  border: 1px solid $titan-steel;
+  border-radius: 10px;
+}
+
+pre.sourceCode {
+  padding: 1rem;
+}
+
+details.code-fold > summary {
+  color: $titan-gray;
+  font-family: $font-family-monospace;
+  font-size: 0.85rem;
+}
+
+details.code-fold > summary:hover {
+  color: $titan-orange-hot;
+}
+
+// Keep tabular notebook outputs readable
+.cell-output-display {
+  overflow-x: auto;
+}
+
+.cell-output-display table {
+  color: $titan-white;
+}
+
+blockquote {
+  color: $titan-gray;
+  border-left: 3px solid $titan-orange;
+}
+
+// Footer
+.nav-footer {
+  background: $titan-carbon;
+  color: $titan-gray;
+  border-top: 1px solid $titan-steel;
+}
+
+@media (max-width: 768px) {
+  .quarto-title-banner {
+    padding-block: 2.5rem;
+  }
+}

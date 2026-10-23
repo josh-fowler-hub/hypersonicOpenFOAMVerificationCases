@@ -1,0 +1,35 @@
+FoamFile
+{
+    version 2.0;
+    format ascii;
+    class dictionary;
+    object controlDict;
+}
+
+application rhoCentralFoam;
+
+startFrom startTime; // Uses startTime
+startTime 0; // Uses fields from 0
+
+stopAt endTime; // Uses endTime
+endTime 0.0004; // ends at 400 microseconds
+
+deltaT 1e-7; // initial timestep
+
+adjustTimeStep yes; // allows timestep reduction
+maxCo 0.2; // targets a maximum cfl of 0.2
+maxDeltaT 1e-7; // maximum timestep
+
+writeControl runTime; // Writes  output at simulation time
+writeInterval 0.00005; // Output every 50 microseconds
+
+purgeWrite 0; // Keeps all written timestep directories
+
+writeFormat ascii;
+writePrecision 12;
+writeCompression off;
+
+timeFormat general;
+timePrecision 10;
+
+runTimeModifiable true; // Allows dictionary changes during execution

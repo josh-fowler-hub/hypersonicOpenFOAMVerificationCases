@@ -1,0 +1,38 @@
+FoamFile
+{
+    version 2.0;
+    format ascii;
+    class dictionary;
+    object thermophysicalProperties;
+}
+
+thermoType
+{
+    type            hePsiThermo; // Pressure-based compressible thermophysical package using compressibility
+    mixture         pureMixture; // Single thermodynamic mixture
+    transport       const; // constant transport coefficients
+    thermo          hConst; // constant heat capacity
+    equationOfState perfectGas; // uses p = rho R T
+    specie          specie; // basic species properties
+    energy          sensibleInternalEnergy; // Solves using sensible internal-energy formula
+}
+
+mixture
+{
+    specie
+    {
+        molWeight 28.970; // molecular weight
+    }
+
+    thermodynamics
+    {
+        Cp 1004.5; // constant specific heat
+        Hf 0; // reference formation enthalpy
+    }
+
+    transport
+    {
+        mu 0;  // no molecular viscous stress, approximates the Euler equations instead of the N-S equations
+        Pr 0.72; // Prandtl number
+    }
+}

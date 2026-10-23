@@ -1,0 +1,59 @@
+FoamFile // Declares this an OpenFOAM file
+{
+    version 2.0; // File format version
+    format ascii; // text-based encoding
+    class dictionary; // identifies a config dictionary
+    object blockMeshDict; // names the dictionary
+}
+
+convertToMeters 1; // coords are already in SI so conversion factor is 1
+
+vertices // Defines the eight corners 0-7 in the order given
+(
+    (0 0 0)
+    (1 0 0)
+    (1 0.01 0)
+    (0 0.01 0)
+    (0 0 0.01)
+    (1 0 0.01)
+    (1 0.01 0.01)
+    (0 0.01 0.01)
+);
+
+blocks // Structured block definition
+(
+    hex (0 1 2 3 4 5 6 7) // vertex ordering
+    (3308 1 1) // subdivisions
+    simpleGrading (1 1 1) // uniform spacing
+);
+
+edges (); // no curved edges
+
+boundary
+(
+    left // physical left end of the domain
+    {
+        type patch; // mesh boundary type
+        faces ((0 4 7 3)); // vertices belonging to each face
+    }
+
+    right // physical right end of the domain
+    {
+        type patch;
+        faces ((1 2 6 5));
+    }
+
+    frontAndBack // Four transverse faces
+    {
+        type empty; // inactive directions for a 1d solution
+        faces
+        (
+            (0 1 5 4)
+            (3 7 6 2)
+            (0 3 2 1)
+            (4 5 6 7)
+        );
+    }
+);
+
+mergePatchPairs (); // No patch merging

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="OpenFOAM verification cases, analytical comparisons, and grid-refinement studies."
+    />
+    <title>OpenFOAM Verification Cases</title>
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">OpenFOAM Verification Cases</a>
+        <span class="header-label">Computational fluid dynamics</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <p class="eyebrow">Numerical verification archive</p>
+        <h1>Evidence before confidence.</h1>
+        <p class="hero-copy">
+          A growing collection of reproducible OpenFOAM cases that compare
+          numerical solutions with analytical or benchmark results.
+        </p>
+      </section>
+
+      <section class="container section" aria-labelledby="cases-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Case library</p>
+            <h2 id="cases-heading">Verification studies</h2>
+          </div>
+          <p class="section-note">01 available case</p>
+        </div>
+
+        <a class="case-card" href="normalShockVerification/page.html">
+          <div class="case-number">01</div>
+          <div class="case-content">
+            <div class="case-topline">
+              <span class="status"><span class="status-dot"></span>Published</span>
+              <span class="case-type">Analytical verification</span>
+            </div>
+            <h3>Moving normal shock</h3>
+            <p>
+              Verification of <code>rhoCentralFoam</code> against the exact
+              Rankine–Hugoniot solution for a one-dimensional shock in a
+              calorically perfect gas.
+            </p>
+            <div class="tags" aria-label="Case topics">
+              <span>Compressible flow</span>
+              <span>Shock waves</span>
+              <span>Grid refinement</span>
+            </div>
+            <span class="read-link">Read the verification case <span aria-hidden="true">↗</span></span>
+          </div>
+          <div class="case-visual" aria-hidden="true">
+            <div class="shock-line"></div>
+            <div class="flow-line flow-one"></div>
+            <div class="flow-line flow-two"></div>
+            <div class="flow-line flow-three"></div>
+            <span class="visual-label upstream">UPSTREAM</span>
+            <span class="visual-label downstream">DOWNSTREAM</span>
+          </div>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>OpenFOAM Verification Cases</span>
+        <span>Reproducible CFD, documented clearly.</span>
+      </div>
+    </footer>
+  </body>
+</html>

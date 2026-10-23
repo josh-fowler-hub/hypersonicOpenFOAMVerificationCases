@@ -1,0 +1,29 @@
+FoamFile
+{
+    version 2.0;
+    format ascii;
+    class dictionary;
+    object setFieldsDict; // This is used to make the IC discontinuous
+}
+
+defaultFieldValues // intitializes the entire mesh to the undisturbed state
+(
+    volScalarFieldValue p 100000
+    volScalarFieldValue T 300
+    volVectorFieldValue U (0 0 0)
+);
+
+regions // Start of the localized field assignments
+(
+    boxToCell
+    {
+        box (0 -1 -1) (0.2 1 1); // portion of the domain fromm x = 0 to x = 0.2, deliberately selects outside the transverse boundaries
+
+        fieldValues // Assigns the theorectical post-shock p, T, and U
+        (
+            volScalarFieldValue p 450000
+            volScalarFieldValue T 506.25
+            volVectorFieldValue U (433.98778208260615 0 0)
+        );
+    }
+);
