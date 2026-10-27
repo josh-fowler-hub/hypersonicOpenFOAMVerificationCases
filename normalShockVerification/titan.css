@@ -18,9 +18,22 @@ html body[for="html-export"] {
 }
 
 html body[for="html-export"] .markdown-preview {
+  width: min(calc(100% - 4rem), 960px);
   max-width: 960px;
   min-height: 100vh;
+  margin: 0 auto;
   padding: 3rem 2rem 6rem;
+  left: auto;
+  transform: none;
+}
+
+/* Override the generated export stylesheet's centered-preview rule. */
+html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview {
+  width: min(calc(100% - 4rem), 960px);
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem;
+  left: auto;
+  transform: none;
 }
 
 html body[for="html-export"] h1,
