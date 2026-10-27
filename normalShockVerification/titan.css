@@ -18,8 +18,8 @@ html body[for="html-export"] {
 }
 
 html body[for="html-export"] .markdown-preview {
-  width: min(calc(100% - 4rem), 960px);
-  max-width: 960px;
+  width: calc(100% - 4rem);
+  max-width: none;
   min-height: 100vh;
   margin: 0 auto;
   padding: 3rem 2rem 6rem;
@@ -29,7 +29,8 @@ html body[for="html-export"] .markdown-preview {
 
 /* Override the generated export stylesheet's centered-preview rule. */
 html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview {
-  width: min(calc(100% - 4rem), 960px);
+  width: calc(100% - 4rem);
+  max-width: none;
   margin: 0 auto;
   padding: 3rem 2rem 6rem;
   left: auto;
@@ -113,6 +114,7 @@ html body[for="html-export"] img {
 
 @media (max-width: 450px) {
   html body[for="html-export"] .markdown-preview {
+    width: calc(100% - 2rem);
     padding: 2rem 1rem 4rem;
   }
 }
