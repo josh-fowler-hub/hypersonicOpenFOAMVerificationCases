@@ -1,0 +1,22 @@
+# OpenFOAM time directories generated during a run.
+# Keep the checked-in initial condition in 0/.
+0.*/
+[1-9]*/
+*e-[0-9][0-9]/
+
+# Solver and utility logs are reproducible from the case setup.
+log.*
+verificationResults_*/log.*
+
+# ParaView/ParaFoam and other local runtime artifacts.
+*.foam
+*.OpenFOAM
+postProcessing/
+processor*/
+dynamicCode/
+
+# Local editor and operating-system files.
+*.swp
+*.swo
+*~
+.DS_Store

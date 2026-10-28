@@ -1,0 +1,120 @@
+:root {
+  --titan-black: #090a0b;
+  --titan-carbon: #111315;
+  --titan-graphite: #1c1f22;
+  --titan-steel: #303438;
+  --titan-orange: #e66b20;
+  --titan-orange-hot: #ff7a22;
+  --titan-copper: #a94d20;
+  --titan-white: #f4f3f0;
+  --titan-gray: #a3a3a0;
+}
+
+html body[for="html-export"] {
+  background: var(--titan-black);
+  color: var(--titan-white);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.75;
+}
+
+html body[for="html-export"] .markdown-preview {
+  width: calc(100% - 4rem);
+  max-width: none;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem;
+  left: auto;
+  transform: none;
+}
+
+/* Override the generated export stylesheet's centered-preview rule. */
+html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview {
+  width: calc(100% - 4rem);
+  max-width: none;
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem;
+  left: auto;
+  transform: none;
+}
+
+html body[for="html-export"] h1,
+html body[for="html-export"] h2,
+html body[for="html-export"] h3,
+html body[for="html-export"] h4,
+html body[for="html-export"] h5,
+html body[for="html-export"] h6 {
+  color: var(--titan-white);
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+html body[for="html-export"] h1 {
+  border-bottom: 1px solid var(--titan-steel);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  padding-bottom: 0.75rem;
+}
+
+html body[for="html-export"] h2 {
+  border-bottom: 1px solid var(--titan-steel);
+  margin-top: 2.5rem;
+  padding-bottom: 0.35rem;
+}
+
+html body[for="html-export"] h3,
+html body[for="html-export"] h4 {
+  margin-top: 2rem;
+}
+
+html body[for="html-export"] a {
+  color: var(--titan-orange-hot);
+  text-underline-offset: 0.25em;
+}
+
+html body[for="html-export"] a:hover {
+  color: var(--titan-white);
+}
+
+html body[for="html-export"] code {
+  background: var(--titan-carbon);
+  color: var(--titan-orange-hot);
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+html body[for="html-export"] pre {
+  background: var(--titan-carbon);
+  border: 1px solid var(--titan-steel);
+  border-left: 3px solid var(--titan-copper);
+  border-radius: 10px;
+}
+
+html body[for="html-export"] blockquote {
+  background: var(--titan-carbon);
+  border-left: 3px solid var(--titan-orange);
+  color: var(--titan-gray);
+}
+
+html body[for="html-export"] table {
+  background: var(--titan-black);
+}
+
+html body[for="html-export"] table th {
+  background: var(--titan-graphite);
+  color: var(--titan-white);
+}
+
+html body[for="html-export"] table td,
+html body[for="html-export"] table th {
+  border-color: var(--titan-steel);
+}
+
+html body[for="html-export"] img {
+  border: 1px solid var(--titan-steel);
+  border-radius: 6px;
+}
+
+@media (max-width: 450px) {
+  html body[for="html-export"] .markdown-preview {
+    width: calc(100% - 2rem);
+    padding: 2rem 1rem 4rem;
+  }
+}
