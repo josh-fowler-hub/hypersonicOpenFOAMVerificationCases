@@ -1,5 +1,5 @@
 
-# Phase 2: Verification of a Two-Dimensional Oblique Shock
+# Mach 2.5 Wedge
 
 ## 1. Objective
 
