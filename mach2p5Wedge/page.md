@@ -260,9 +260,6 @@ These relations close the system of conservation equations.
 
 ### 4.1 Shock Geometry
 
-Unlike the normal-shock problem in Phase 1, the
-incoming velocity is not perpendicular to the shock.
-
 The velocity can be decomposed into normal and
 tangential components relative to the shock.
 
@@ -499,7 +496,7 @@ Here,
 The numerical flux approximates the transport of
 conserved quantities between neighboring cells.
 
-### 5.2 Numerical Configuration
+### 5.2 Solver Configuration
 
 | Component | Configuration |
 |---|---|
@@ -562,16 +559,6 @@ $$
 
 ### 6.3 Shock Detection
 
-The original detector identified the location
-of the maximum pressure gradient along
-each streamwise sampling column.
-
-That method produced an isolated erroneous
-detection near $x=0.123$ m.
-
-The detector was subsequently corrected using
-pressure-midpoint interpolation.
-
 The pressure midpoint is defined as
 
 $$
@@ -609,10 +596,6 @@ $$
 
 This method locates a consistent position
 inside the captured pressure transition.
-
-Unlike the original gradient-peak detector,
-it does not automatically select the largest
-local pressure derivative.
 
 ### 6.4 Shock-Angle Estimation
 
@@ -663,27 +646,12 @@ $(0,0)$, the analytical intercept is zero.
 
 ![Numerical pressure field](analysis/results/pressure_field.png)
 
-**Figure 1.** Numerical pressure field normalized by
-freestream pressure, with the analytical shock and
+**Figure 1.** Normalized pressure field, with the analytical shock and
 numerically detected shock positions.
 
-The numerical solution exhibits the expected
-attached oblique-shock structure.
+The numerical solution exhibits the expected attached oblique-shock structure. The shock originates near the wedge leading edge and extends upward through the computational domain.
 
-The shock originates near the wedge leading edge
-and extends upward through the computational domain.
-
-The region between the shock and wedge surface
-has elevated pressure.
-
-The freestream region above the shock remains
-close to the upstream pressure.
-
-The compressed region follows the expected
-wedge geometry.
-
-The pressure field shows qualitatively good
-agreement with the analytical solution.
+The pressure field shows good agreement with the analytical solution.
 
 ### 7.2 Vertical Pressure Profiles
 
@@ -712,23 +680,6 @@ $$
 \frac{p_2}{p_1}=2.467500.
 $$
 
-The numerical pressure profiles transition
-between these two expected states.
-
-The profiles exhibit smooth captured shocks
-with no visually significant pressure overshoot
-or undershoot at the displayed scale.
-
-As the streamwise position increases,
-the pressure transition moves upward,
-consistent with the analytical shock angle.
-
-The profiles also demonstrate that the
-numerical shock has finite thickness.
-
-This finite thickness results from
-the shock-capturing discretization.
-
 ### 7.3 Shock-Location Error
 
 ![Shock-location error](analysis/results/shock_error.png)
@@ -745,28 +696,6 @@ y_{s,h}(x)-x\tan\beta_{\mathrm{exact}}
 }
 \tag{9}
 $$
-
-The original gradient-based detector produced
-one isolated outlier near
-
-$$
-x\approx0.123\ \mathrm m.
-$$
-
-The outlier had a displacement of approximately
-
-$$
-e_y\approx22\ \mathrm{mm}.
-$$
-
-This was identified as a shock-detection issue,
-rather than evidence of a displaced physical shock.
-
-The corrected midpoint-based detector was
-subsequently executed.
-
-The corrected analysis should be used for
-final quantitative error reporting.
 
 ### 7.4 Shock Geometry
 
@@ -796,11 +725,6 @@ The numerical angle is calculated using
 $$
 \beta_h=\tan^{-1}(m_h).
 $$
-
-The corrected midpoint-based detection
-provides the preferred estimate for
-quantitative shock-angle verification.
-
 
 ---
 
