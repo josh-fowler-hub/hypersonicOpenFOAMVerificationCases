@@ -778,33 +778,6 @@ The primary findings are:
    matches the theoretical pressure ratio
    of 2.467500.
 
-4. Vertical pressure profiles exhibit smooth
-   transitions between the analytical
-   upstream and downstream states.
-
-5. The original gradient-based shock detector
-   produced an isolated erroneous detection.
-
-6. The shock detector was corrected using
-   pressure-midpoint interpolation, and the
-   corrected analysis was executed.
-
-7. The corrected numerical metrics must be
-   inserted from the Julia output to complete
-   the quantitative verification record.
-
-The present results support the qualitative
-correctness of the numerical flow solution.
-
-A complete assessment of numerical accuracy
-requires the corrected error metrics,
-conservation analysis, and systematic
-grid-convergence study.
-
-The next phase will investigate the influence
-of mesh resolution and alignment on
-shock-capturing accuracy.
-
 ---
 
 ## 14. References
